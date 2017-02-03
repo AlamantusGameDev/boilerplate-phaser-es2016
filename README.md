@@ -1,22 +1,23 @@
-# boilerplate-phaser-es2016
+# Phaser-ES2016-Webpack Boilerplate
 
-> :fork_and_knife: Example game based on [Phaser.js](http://phaser.io). Use 
-ECMAScript 2016 syntax.
+:star2: Start a Phaser.js project using Webpack and ECMAScript 2016 syntax.
 
 ## Features &#x2714;
 
 * [x] Phaser v2.6.2
-* [x] Webpack v2.1.0-beta
+* [x] Webpack v2.2.1
 * [x] Babel (ECMAScript 2015 + ECMAScript 2016 + Stage 0 of ECMAScript 2017)
 * [x] [super-event-emitter](http://github.com/piecioshka/super-event-emitter)
  v4.1.4 as event management
 * [x] Typings (Phaser, super-event-emitter) for syntax highlighters
 * [x] Task for count line of code (LOC)
 * [x] Simple structure for app: `constants/`, `models/`, `states/`
-* [x] Put example map (build in Tiled)
+* [x] Example map (build in Tiled)
 * [x] Static directory: `public/`
+* [x] Pack all images (PNGs &amp; JPGs under 25kb) and Tiled map files (JSON)
+ into a single bundle.
 
-![](./screenshots.png)
+![Screenshot](./screenshots.png)
 
 ## Steps to bootstrap
 
@@ -24,6 +25,16 @@ ECMAScript 2016 syntax.
 $ npm install       # install dependencies
 $ npm run build     # build distribution files in public/dist/
 ```
+
+or [Yarn](https://yarnpkg.com/lang/en/) can be used instead of npm in all
+ cases as shown below:
+
+```
+$ yarn      # install dependencies
+$ yarn run build    # build distribution files in public/dist/
+```
+ 
+ **Note:** To enable minification on builds, set `ENV = 'prod'` in `webpack.config.js`
 
 ## Development
 
@@ -35,8 +46,11 @@ $ npm run watch     # run Webpack to listen of file modifications
 ## Misc
 
 ```
-$ npm run clear     # remove all generated files
-$ npm run count     # count LOC (line of code)
+$ npm run count      # count lines of code (Linux and OSX)
+$ npm run clear      # remove all dist files (Linux and OSX)
+$ npm run clear-cmd  # remove all dist files (Windows)
+$ npm run clear-project      # remove all project files (Linux and OSX)
+$ npm run clear-project-cmd  # remove all project files (Windows)
 ```
 
 ## Troubleshooting

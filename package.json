@@ -1,34 +1,50 @@
 {
-    "name": "boilerplate-phaser-es2016",
-    "version": "1.0.0",
-    "description": "Example game based on Phaser.js. Use ECMAScript 2016 syntax.",
+    "name": "phaser-es2016-webpack-boilerplate",
+    "version": "1.0.1",
+    "description": "Start a Phaser.js project using Webpack and ECMAScript 2016 syntax.",
     "license": "MIT",
-    "author": {
-        "name": "Piotr Kowalski",
-        "email": "piecioshka@gmail.com",
-        "url": "https://piecioshka.pl/"
-    },
+    "contributors": [
+        {
+            "name": "Piotr Kowalski",
+            "email": "piecioshka@gmail.com",
+            "url": "https://piecioshka.pl/"
+        },
+        {
+            "name": "Robbie Antenesse",
+            "email": "gamedev@alamantus.com",
+            "url": "http://alamantus.com/"
+        }
+    ],
     "scripts": {
         "watch": "webpack --progress -w",
         "build": "webpack --profile -p",
-        "clear": "rm -rf node_modules/ npm-debug.log public/dist/ typings/",
+        "clear": "rm -rf ./public/dist/",
+        "clear-cmd": "rd .\\public\\dist\\ /s /q",
+        "clear-project": "rm -rf ./node_modules/ ./npm-debug.log ./public/dist/ ./typings/",
+        "clear-project-cmd": "rd .\\node_modules\\ .\\npm-debug.log .\\public\\dist\\ .\\typings\\ /s /q",
         "count": "find app -name '*.js' | xargs wc -l | sort",
         "typings": "typings install"
     },
     "dependencies": {
+        "babel-polyfill": "^6.16.0",
+        "phaser": "^2.6.2",
+        "super-event-emitter": "^4.1.4"
+    },
+    "devDependencies": {
         "babel-core": "^6.18.2",
         "babel-loader": "^6.2.8",
         "babel-preset-es2015": "^6.18.0",
         "babel-preset-es2016": "^6.16.0",
         "babel-preset-stage-0": "^6.16.0",
-        "phaser": "^2.6.2",
+        "file-loader": "^0.10.0",
+        "img-loader": "^1.3.1",
         "script-loader": "^0.7.0",
-        "super-event-emitter": "^4.1.4",
         "typings": "^2.0.0",
-        "webpack": "^2.1.0-beta"
+        "url-loader": "^0.5.7",
+        "webpack": "^2.2.1"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/piecioshka/boilerplate-phaser-es2016"
+        "url": "https://github.com/AlamantusGameDev/boilerplate-phaser-es2016"
     }
 }

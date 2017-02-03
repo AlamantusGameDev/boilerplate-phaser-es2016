@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 import { Game } from './game';
 import { StateManager } from './state-manager';
 import GAME from './constants/game';

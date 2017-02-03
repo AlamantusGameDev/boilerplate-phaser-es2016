@@ -1,8 +1,10 @@
 import STATE_EVENTS from '../constants/state-events';
 
+import loaderImagePath from '../assets/images/loader.png';
+
 export class BootstrapState extends Phaser.State {
     preload() {
-        this.load.image('loader', 'assets/images/loader.png');
+        this.load.image('loader', loaderImagePath);
     }
 
     create() {

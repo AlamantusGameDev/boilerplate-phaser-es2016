@@ -73,6 +73,11 @@ this.map = this.add.tilemap('example-map');
 this.map.addTilesetImage('street');     // MUST BE ADDED
 ```
 
+### Audio Files
+
+Import audio files to get their path and use the path variable to call the audio file,
+  the same way as images in `/app/states/loading-state.js`.
+
 ## License
 
 [The MIT License](http://piecioshka.mit-license.org) @ 2016

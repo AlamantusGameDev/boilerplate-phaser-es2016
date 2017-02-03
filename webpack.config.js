@@ -52,6 +52,10 @@ module.exports = {
             ,   loader: 'url-loader?limit=25000&name=./assets/maps/[name].[ext]?[hash]'
             }
         ,   {
+                test: /\.(mp3|wav|ogg)$/
+            ,   loader: 'url-loader?name=./assets/audio/[name].[ext]?[hash]'
+            }
+        ,   {
                 test: /\.(jpe?g|png)$/
             ,   loaders: [
                     'url-loader?limit=25000&name=./assets/images/[name].[ext]?[hash]'

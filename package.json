@@ -23,6 +23,7 @@
         "clear-project": "rm -rf ./node_modules/ ./npm-debug.log ./public/dist/ ./typings/",
         "clear-project-cmd": "rd .\\node_modules\\ .\\npm-debug.log .\\public\\dist\\ .\\typings\\ /s /q",
         "count": "find app -name '*.js' | xargs wc -l | sort",
+        "count-cmd": "dir /b /s .\\app\\*.js | findstr /f:/ /v \"^$\" | find /c /v \"\"",
         "typings": "typings install"
     },
     "dependencies": {

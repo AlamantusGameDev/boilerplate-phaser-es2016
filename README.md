@@ -47,10 +47,17 @@ $ npm run watch     # run Webpack to listen of file modifications
 
 ```
 $ npm run count      # count lines of code (Linux and OSX)
+$ npm run count-cmd  # count lines of code, excluding empty lines (Windows)
 $ npm run clear      # remove all dist files (Linux and OSX)
 $ npm run clear-cmd  # remove all dist files (Windows)
 $ npm run clear-project      # remove all project files (Linux and OSX)
 $ npm run clear-project-cmd  # remove all project files (Windows)
+```
+
+**Note:** If you want a true LOC count excluding comments and blank lines, use this command in Powershell:
+
+```
+(dir .\app -include *.js -recurse | select-string "^(\s*)//" -notMatch | select-string "^(\s*)$" -notMatch).Count
 ```
 
 ## Troubleshooting

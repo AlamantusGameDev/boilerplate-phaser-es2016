@@ -13,19 +13,7 @@ const phaserModulePath = path.join(__dirname, '/node_modules/phaser/')
 ,   p2Path = path.join(phaserModulePath, 'build/custom/p2.js')
 ;
 
-const webpackUglifySettings = (ENV === 'prod') ? {
-    compress: {
-        warnings: false
-    }
-    ,   mangle: {
-        except: ['webpackJsonp']
-    }
-    ,   output: {
-        comments: false
-    }
-} : {};
-
-module.exports = {
+let webpackExport = {
     entry: {
         game: './app/main'
     // ,   optionalOtherBundle: './path/to/other/script'
@@ -49,7 +37,7 @@ module.exports = {
             }
         ,   {
                 test: /\.(json)$/
-            ,   loader: 'url-loader?limit=25000&name=./assets/maps/[name].[ext]?[hash]'
+            ,   loader: 'json-loader'
             }
         ,   {
                 test: /\.(mp3|wav|ogg)$/
@@ -71,7 +59,25 @@ module.exports = {
         ,   p2: p2Path
         ,   Phaser: phaserPath
         })
-    // Comment the optimize lines if it builds too slow while developing.
-    ,   new webpack.optimize.UglifyJsPlugin(webpackUglifySettings)
     ]
 };
+
+if (ENV === 'prod') {
+    webpackExport.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+            ,   mangle: {
+                except: ['webpackJsonp']
+            }
+            ,   output: {
+                comments: false
+            }
+        })
+    );
+} else {
+    webpackExport.devtool = 'source-map';
+}
+
+module.exports = webpackExport;

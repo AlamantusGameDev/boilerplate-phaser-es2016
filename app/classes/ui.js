@@ -20,7 +20,8 @@ export class UI {
     }
 
     setup () {
-        // Create the buttons in here.
+        // Create the buttons in here this method from the child UI classes.
+        // See app/models/guis/main-screen.js for an example.
     }
 
     changeState (stateName) {
@@ -56,9 +57,10 @@ export class UI {
         button.mouseisOver = false;
 
         // Set the button's neutral tint to
-        let neutralTint = 0xDDDDDD,
-            hoverTint = 0xFFFFFF,
-            clickTint = 0xAAAAAA;
+        let neutralTint = 0xDDDDDD
+        ,   hoverTint = 0xFFFFFF
+        ,   clickTint = 0xAAAAAA
+        ;
         button.tint = neutralTint;
 
         button.onInputOver.add(() => {
@@ -88,7 +90,6 @@ export class UI {
     ,   outlineColor = UICONST.DEFAULT_TEXT_OUTLINE_COLOR
     ,   outlineThickness = 0
     ,   align = UICONST.DEFAULT_TEXT_ALIGNMENT
-
     ,   anchorX = UICONST.DEFAULT_TEXT_ANCHOR.x
     ,   anchorY = UICONST.DEFAULT_TEXT_ANCHOR.y
     } = {}) {

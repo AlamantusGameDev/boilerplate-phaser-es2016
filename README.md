@@ -14,10 +14,13 @@
 * [x] Simple structure for app: `constants/`, `models/`, `states/`
 * [x] Example map (build in Tiled)
 * [x] Static directory: `public/`
-* [x] Pack all images (PNGs &amp; JPGs under 25kb) and Tiled map files (JSON)
- into a single bundle.
+* [x] Pack all images (PNGs &amp; JPGs under 25kb), Tiled map files (JSON),
+ and fonts into a single bundle.
+* [x] Custom font support
+* [x] Simple, extensible UI system
 
-![Screenshot](./screenshots.png)
+![UI and Custom Font Screenshot](screenshot-title.png)
+![Example Room Screenshot](screenshot-example.png)
 
 ## Steps to bootstrap
 
@@ -60,6 +63,15 @@ $ npm run clear-project-cmd  # remove all project files (Windows)
 (dir .\app -include *.js -recurse | select-string "^(\s*)//" -notMatch | select-string "^(\s*)$" -notMatch).Count
 ```
 
+## Custom Fonts
+
+Custom fonts are added in `app/assets/fonts/`. Follow the example set in this folder to learn how to utilize this feature.
+
+You will notice that the example contains several different formats in the font folder (`.eot, .otf, .ttf, .woff, .woff2`).
+This is to allow the widest browser support possible. Easy font converters for each format can be found at
+https://everythingfonts.com/, and https://www.fontsquirrel.com/tools/webfont-generator is a good place to make sure that
+the font you are converting is allowed to be converted.
+
 ## Troubleshooting
 
 ### `Uncaught TypeError: Cannot read property 'cache' of undefined`
@@ -80,6 +92,25 @@ this.map = this.add.tilemap('example-map');
 this.map.addTilesetImage('street');     // MUST BE ADDED
 ```
 
+### Custom Fonts Don't Load
+
+Make sure you are using the correct font name as specified in `app/assets/fonts/fonts.css`. If the font family name is
+different than the font's filename, using the filename will not load the font:
+
+```
+@font-face {
+    font-family: 'ExampleFont'; /* <-- This is the name to use in Phaser. */
+    src: url('./Almendra/Almendra-Bold.eot');
+    src: url('./Almendra/Almendra-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./Almendra/Almendra-Bold.woff2') format('woff2'),
+    url('./Almendra/Almendra-Bold.woff') format('woff'),
+    url('./Almendra/Almendra-Bold.ttf') format('truetype'),
+    url('./Almendra/Almendra-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+```
+
 ### Audio Files
 
 Import audio files to get their path and use the path variable to call the audio file,
@@ -87,4 +118,4 @@ Import audio files to get their path and use the path variable to call the audio
 
 ## License
 
-[The MIT License](http://piecioshka.mit-license.org) @ 2016
+[The MIT License](http://mit-license.org) @ 2016

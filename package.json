@@ -29,8 +29,7 @@
     "dependencies": {
         "babel-polyfill": "^6.16.0",
         "phaser": "^2.6.2",
-        "super-event-emitter": "^4.1.4",
-        "webfontloader": "^1.6.27"
+        "super-event-emitter": "^4.1.4"
     },
     "devDependencies": {
         "babel-core": "^6.18.2",

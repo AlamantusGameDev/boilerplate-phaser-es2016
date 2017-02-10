@@ -4706,10 +4706,6 @@ wcwidth@^1.0.0:
   dependencies:
     defaults "^1.0.3"
 
-webfontloader@^1.6.27:
-  version "1.6.27"
-  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.27.tgz#c3899649b0653aa57d0a23388f82409e0df224ba"
-
 webpack-sources@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.1.4.tgz#ccc2c817e08e5fa393239412690bb481821393cd"

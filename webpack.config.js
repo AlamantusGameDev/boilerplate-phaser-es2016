@@ -50,6 +50,29 @@ let webpackExport = {
                 ,   'img-loader?progressive=true&optimizationLevel=5'
                 ]
             }
+        ,   {
+                test: /\.css$/
+            ,   loaders: [
+                    'style-loader'
+                ,   'css-loader'
+                ]
+            }
+        ,   {
+                test: /\.woff$/
+            ,   loader: 'url-loader?limit=65000&mimetype=application/font-woff&name=./assets/fonts/[name].[ext]'
+            }
+        ,   {
+                test: /\.woff2$/
+            ,   loader: 'url-loader?limit=65000&mimetype=application/font-woff2&name=./assets/fonts/[name].[ext]'
+            }
+        ,   {
+                test: /\.[ot]tf$/
+            ,   loader: 'url-loader?limit=65000&mimetype=application/octet-stream&name=./assets/fonts/[name].[ext]'
+            }
+        ,   {
+                test: /\.eot$/
+            ,   loader: 'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=./assets/fonts/[name].[ext]'
+            }
         ]
     }
 

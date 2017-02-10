@@ -4,10 +4,14 @@ import STATE_EVENTS from '../constants/state-events';
 import { Player } from '../models/player';
 
 export class ExampleState extends Phaser.State {
-    map = null;
-    layer = null;
+    constructor (...args) {
+        super(...args);
 
-    create() {
+        this.map = null;
+        this.layer = null;
+    }
+
+    create () {
         this.physics.startSystem(Phaser.Physics.ARCADE);
         this.physics.arcade.gravity.y = GAME.GRAVITY;
 
@@ -23,11 +27,11 @@ export class ExampleState extends Phaser.State {
         this.game.trigger(STATE_EVENTS.EXAMPLE_COMPLETED);
     }
 
-    update() {
+    update () {
         this.physics.arcade.collide(this.game.player, this.layer);
     }
 
-    render() {
+    render () {
         // this.game.debug.body(this.game.player);
     }
 }

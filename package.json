@@ -1,6 +1,6 @@
 {
     "name": "phaser-es2016-webpack-boilerplate",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Start a Phaser.js project using Webpack and ECMAScript 2016 syntax.",
     "license": "MIT",
     "contributors": [
@@ -29,7 +29,8 @@
     "dependencies": {
         "babel-polyfill": "^6.16.0",
         "phaser": "^2.6.2",
-        "super-event-emitter": "^4.1.4"
+        "super-event-emitter": "^4.1.4",
+        "webfontloader": "^1.6.27"
     },
     "devDependencies": {
         "babel-core": "^6.18.2",
@@ -37,15 +38,18 @@
         "babel-preset-es2015": "^6.18.0",
         "babel-preset-es2016": "^6.16.0",
         "babel-preset-stage-0": "^6.16.0",
+        "css-loader": "^0.26.1",
         "file-loader": "^0.10.0",
         "img-loader": "^1.3.1",
+        "json-loader": "^0.5.4",
         "script-loader": "^0.7.0",
+        "style-loader": "^0.13.1",
         "typings": "^2.0.0",
         "url-loader": "^0.5.7",
         "webpack": "^2.2.1"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/AlamantusGameDev/boilerplate-phaser-es2016"
+        "url": "https://github.com/AlamantusGameDev/phaser-es2016-webpack-boilerplate"
     }
 }

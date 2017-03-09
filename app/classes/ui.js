@@ -5,6 +5,8 @@ export class UI {
     constructor (name, state) {
         this.name = name;
         this.state = state;
+
+        // UIs are hidden/inactive by default.
         this.isActive = false;
 
         if (!this.state.hasOwnProperty('uiElements')) {
@@ -35,7 +37,7 @@ export class UI {
     }
 
     hide () {
-        this.isActive = true;
+        this.isActive = false;
 
         this.updateVisibility();
     }
@@ -56,7 +58,7 @@ export class UI {
         button.anchor.setTo(anchorX, anchorY);
         button.mouseisOver = false;
 
-        // Set the button's neutral tint to
+        // Set the button's neutral tint to just a little bit darker than its regular shade.
         let neutralTint = 0xDDDDDD
         ,   hoverTint = 0xFFFFFF
         ,   clickTint = 0xAAAAAA

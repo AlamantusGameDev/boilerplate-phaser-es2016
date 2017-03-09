@@ -169,4 +169,31 @@ export class UI {
 
         return button;
     }
+
+    addPanel (x, y, width, height, {
+        backgroundColor = UICONST.DEFAULT_PANEL_COLOR
+    ,   backgroundOpacity = UICONST.DEFAULT_PANEL_OPACITY
+    ,   backgroundSprite = undefined
+    ,   isTiled = true
+    }) {
+        // TODO: Figure this nonsense out.
+        if (backgroundSprite) {
+
+        }
+    }
+
+    addScrollBox (x, y, width, height, {
+        background = {
+            sprite: undefined
+        ,   isTiled: undefined
+        ,   color: undefined
+        ,   opacity: undefined
+        }
+    ,   topConstraint = undefined
+    ,   bottomConstraint = undefined
+    ,   allowXScroll = false
+    ,   scrollBarStyle = {}
+    }) {
+        // TODO: Use game.input.mouse.mouseWheelCallback and game.input.mouse.wheelDelta with Phaser.Mouse.WHEEL_UP/DOWN
+    }
 }

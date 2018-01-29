@@ -1,6 +1,6 @@
 {
     "name": "phaser-es2016-webpack-boilerplate",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Start a Phaser.js project using Webpack and ECMAScript 2016 syntax.",
     "license": "MIT",
     "contributors": [
@@ -29,7 +29,7 @@
     },
     "dependencies": {
         "babel-polyfill": "^6.26.0",
-        "phaser": "^2.6.2",
+        "phaser-ce": "^2.10.0",
         "super-event-emitter": "^4.1.4"
     },
     "devDependencies": {

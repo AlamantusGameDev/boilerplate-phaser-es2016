@@ -4564,9 +4564,9 @@ pend@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
 
-phaser@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/phaser/-/phaser-2.6.2.tgz#eb39121725a2149c49f46b5d144318c22bc09249"
+phaser-ce@^2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/phaser-ce/-/phaser-ce-2.10.0.tgz#cff278df9257b7e4f50a60ccd5644168a11ca88c"
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"

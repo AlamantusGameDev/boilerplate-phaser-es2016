@@ -4,9 +4,9 @@
 
 ## Features &#x2714;
 
-* [x] Phaser v2.6.2
-* [x] Webpack v2.2.1 + Dev Server v2.11.1
-* [x] Babel (ECMAScript 2015 + ECMAScript 2016 + Stage 0 of ECMAScript 2017)
+* [x] Phaser v2.10.0 (Community Edition)
+* [x] Webpack v3.10.0 + Dev Server v2.11.1
+* [x] BabelJS Env (ECMAScript 2015 + ECMAScript 2016 + Stage 0 of ECMAScript 2017)
 * [x] [super-event-emitter](http://github.com/piecioshka/super-event-emitter)
  v4.1.4 as event management
 * [x] Typings (Phaser, super-event-emitter) for syntax highlighters
@@ -15,7 +15,7 @@
 * [x] Example map (build in Tiled)
 * [x] Static directory: `public/`
 * [x] Pack all images (PNGs &amp; JPGs under 25kb), Tiled map files (JSON),
- and fonts into a single bundle.
+ and fonts (.eot, .otf, .ttf, .woff, and .woff2 under 65kb) into a single bundle.
 * [x] Custom font support
 * [x] Simple, extensible UI system
 

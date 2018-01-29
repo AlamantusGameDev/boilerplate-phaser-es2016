@@ -6,7 +6,7 @@ const ENV = 'dev';
 const path = require('path'),
     webpack = require('webpack');
 
-const phaserModulePath = path.join(__dirname, '/node_modules/phaser/'),
+const phaserModulePath = path.join(__dirname, '/node_modules/phaser-ce/'),
     phaserPath = path.join(phaserModulePath, 'build/custom/phaser-split.js'),
     pixiPath = path.join(phaserModulePath, 'build/custom/pixi.js'),
     p2Path = path.join(phaserModulePath, 'build/custom/p2.js');

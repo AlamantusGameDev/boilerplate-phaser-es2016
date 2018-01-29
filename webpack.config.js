@@ -13,12 +13,12 @@ const phaserModulePath = path.join(__dirname, '/node_modules/phaser/'),
 
 let webpackExport = {
     entry: {
-        game: './app/main',
+        game: path.resolve(__dirname, './app/main'),
         // optionalOtherBundle: './path/to/other/script'
     },
     
     output: {
-        path: './public/dist',
+        path: path.resolve(__dirname, './public/dist'),
         filename: '[name].bundle.js',
     },
     
@@ -99,6 +99,11 @@ if (ENV === 'prod') {
     );
 } else {
     webpackExport.devtool = 'source-map';
+    webpackExport.devServer = {
+        contentBase: path.join(__dirname, "public"),
+        // compress: true,
+        port: 3013,
+    }
 }
 
 module.exports = webpackExport;

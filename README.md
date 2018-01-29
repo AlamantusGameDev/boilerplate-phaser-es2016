@@ -5,7 +5,7 @@
 ## Features &#x2714;
 
 * [x] Phaser v2.6.2
-* [x] Webpack v2.2.1
+* [x] Webpack v2.2.1 + Dev Server v2.11.1
 * [x] Babel (ECMAScript 2015 + ECMAScript 2016 + Stage 0 of ECMAScript 2017)
 * [x] [super-event-emitter](http://github.com/piecioshka/super-event-emitter)
  v4.1.4 as event management
@@ -44,6 +44,7 @@ $ yarn run build    # build distribution files in public/dist/
 ```
 $ npm run typings   # support syntax highlighters
 $ npm run watch     # run Webpack to listen of file modifications
+$ npm run dev       # run Webpack to listen of file modifications while serving to `localhost:3013`
 ```
 
 ## Misc

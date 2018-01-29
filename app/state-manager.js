@@ -6,9 +6,7 @@ import { TitleState } from './states/title-state';
 import { ExampleState } from './states/example-state';
 
 export class StateManager {
-    game = null;
-
-    constructor(game) {
+    constructor(game = null) {
         this.game = game;
         this.setupStates();
         this.setupNativeListeners();

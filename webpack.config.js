@@ -23,53 +23,124 @@ let webpackExport = {
     },
     
     module: {
-        loaders: [
+        rules: [
             {
                 test: /phaser\.js$/,
-                loader: 'script-loader',
+                use: [
+                    {
+                        loader: 'script-loader',
+                    },
+                ],
             },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                use: [
+                    {
+                        loader: 'babel-loader',
+                    },
+                ],
             },
             {
                 test: /\.(json)$/,
-                loader: 'json-loader',
+                use: [
+                    {
+                        loader: 'json-loader',
+                    },
+                ],
             },
             {
                 test: /\.(mp3|wav|ogg)$/,
-                loader: 'url-loader?name=./assets/audio/[name].[ext]?[hash]',
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: './assets/audio/[name].[ext]?[hash]',
+                        },
+                    },
+                ],
             },
             {
                 test: /\.(jpe?g|png)$/,
-                loaders: [
-                    'url-loader?limit=25000&name=./assets/images/[name].[ext]?[hash]',
-                    'img-loader?progressive=true&optimizationLevel=5',
-                ]
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 25000,
+                            name: './assets/images/[name].[ext]?[hash]',
+                        }
+                    },
+                    {
+                        loader: 'img-loader',
+                        options: {
+                            progressive: true,
+                            optimizationLevel: 5,
+                        },
+                    },
+                ],
             },
             {
                 test: /\.css$/,
-                loaders: [
-                    'style-loader',
-                    'css-loader',
-                ]
+                use: [
+                    {
+                        loader: 'style-loader',
+                    },
+                    {
+                        loader: 'css-loader',
+                    },
+                ],
             },
             {
                 test: /\.woff$/,
-                loader: 'url-loader?limit=65000&mimetype=application/font-woff&name=./assets/fonts/[name].[ext]',
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 65000,
+                            mimetype: 'application/font-woff',
+                            name: './assets/fonts/[name].[ext]',
+                        }
+                    },
+                ],
             },
             {
                 test: /\.woff2$/,
-                loader: 'url-loader?limit=65000&mimetype=application/font-woff2&name=./assets/fonts/[name].[ext]',
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 65000,
+                            mimetype: 'application/font-woff2',
+                            name: './assets/fonts/[name].[ext]',
+                        }
+                    },
+                ],
             },
             {
                 test: /\.[ot]tf$/,
-                loader: 'url-loader?limit=65000&mimetype=application/octet-stream&name=./assets/fonts/[name].[ext]',
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 65000,
+                            mimetype: 'application/octet-stream',
+                            name: './assets/fonts/[name].[ext]',
+                        }
+                    },
+                ],
             },
             {
                 test: /\.eot$/,
-                loader: 'url-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=./assets/fonts/[name].[ext]',
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 65000,
+                            mimetype: 'application/vnd.ms-fontobject',
+                            name: './assets/fonts/[name].[ext]',
+                        }
+                    },
+                ],
             },
         ]
     },

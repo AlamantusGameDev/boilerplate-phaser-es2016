@@ -47,22 +47,21 @@ export class UI {
     }
 
     addButton (x, y, imageKey, callback = () => {}, {
-        overFrame = undefined
-    ,   outFrame = undefined
-    ,   downFrame = undefined
-    ,   upFrame = undefined
-    ,   anchorX = UICONST.DEFAULT_BUTTON_ANCHOR.x
-    ,   anchorY = UICONST.DEFAULT_BUTTON_ANCHOR.y
+        overFrame = undefined,
+        outFrame = undefined,
+        downFrame = undefined,
+        upFrame = undefined,
+        anchorX = UICONST.DEFAULT_BUTTON_ANCHOR.x,
+        anchorY = UICONST.DEFAULT_BUTTON_ANCHOR.y,
     } = {}) {
         let button = this.state.add.button(x, y, imageKey, callback, this.state, overFrame, outFrame, downFrame, upFrame, this.uiGroup);
         button.anchor.setTo(anchorX, anchorY);
         button.mouseisOver = false;
 
         // Set the button's neutral tint to just a little bit darker than its regular shade.
-        let neutralTint = 0xDDDDDD
-        ,   hoverTint = 0xFFFFFF
-        ,   clickTint = 0xAAAAAA
-        ;
+        let neutralTint = 0xDDDDDD,
+        hoverTint = 0xFFFFFF,
+        clickTint = 0xAAAAAA;
         button.tint = neutralTint;
 
         button.onInputOver.add(() => {
@@ -86,22 +85,22 @@ export class UI {
     }
 
     addText (x, y, text, {
-        font = UICONST.DEFAULT_TEXT_FONT
-    ,   size = UICONST.DEFAULT_FONT_SIZE
-    ,   color = UICONST.DEFAULT_TEXT_COLOR
-    ,   outlineColor = UICONST.DEFAULT_TEXT_OUTLINE_COLOR
-    ,   outlineThickness = 0
-    ,   align = UICONST.DEFAULT_TEXT_ALIGNMENT
-    ,   anchorX = UICONST.DEFAULT_TEXT_ANCHOR.x
-    ,   anchorY = UICONST.DEFAULT_TEXT_ANCHOR.y
+        font = UICONST.DEFAULT_TEXT_FONT,
+        size = UICONST.DEFAULT_FONT_SIZE,
+        color = UICONST.DEFAULT_TEXT_COLOR,
+        outlineColor = UICONST.DEFAULT_TEXT_OUTLINE_COLOR,
+        outlineThickness = 0,
+        align = UICONST.DEFAULT_TEXT_ALIGNMENT,
+        anchorX = UICONST.DEFAULT_TEXT_ANCHOR.x,
+        anchorY = UICONST.DEFAULT_TEXT_ANCHOR.y,
     } = {}) {
         let style = {
-            font: font
-        ,   fontSize: size
-        ,   align: align
-        ,   fill: color
-        ,   stroke: outlineColor
-        ,   strokeThickness: outlineThickness
+            font: font,
+            fontSize: size,
+            align: align,
+            fill: color,
+            stroke: outlineColor,
+            strokeThickness: outlineThickness,
         };
         let webText = this.state.add.text(x, y, text, style, this.uiGroup);
         webText.align = align;
@@ -111,35 +110,35 @@ export class UI {
     }
 
     addTextButton (x, y, text, callback = () => {}, {
-        buttonColor = UICONST.DEFAULT_TEXTBUTTON_COLOR
-    ,   textColor = UICONST.DEFAULT_TEXTBUTTON_TEXT_COLOR
-    ,   font = UICONST.DEFAULT_TEXTBUTTON_FONT
-    ,   fontSize = undefined
-    ,   anchorX = UICONST.DEFAULT_BUTTON_ANCHOR.x
-    ,   anchorY = UICONST.DEFAULT_BUTTON_ANCHOR.y
-    ,   buttonWidth = undefined
-    ,   buttonHeight = undefined
-    ,   buttonPaddingScale = UICONST.DEFAULT_BUTTON_PADDING_SCALE
-    ,   buttonRadius = UICONST.DEFAULT_BUTTON_RADIUS
+        buttonColor = UICONST.DEFAULT_TEXTBUTTON_COLOR,
+        textColor = UICONST.DEFAULT_TEXTBUTTON_TEXT_COLOR,
+        font = UICONST.DEFAULT_TEXTBUTTON_FONT,
+        fontSize = undefined,
+        anchorX = UICONST.DEFAULT_BUTTON_ANCHOR.x,
+        anchorY = UICONST.DEFAULT_BUTTON_ANCHOR.y,
+        buttonWidth = undefined,
+        buttonHeight = undefined,
+        buttonPaddingScale = UICONST.DEFAULT_BUTTON_PADDING_SCALE,
+        buttonRadius = UICONST.DEFAULT_BUTTON_RADIUS,
     } = {}) {
         let buttonText = this.addText(0, 0, text, {
-            font: font
-        ,   size: fontSize
-        ,   color: textColor
-        ,   anchorX: anchorX
-        ,   anchorY: anchorY
-        ,   outlineThickness: 1
+            font: font,
+            size: fontSize,
+            color: textColor,
+            anchorX: anchorX,
+            anchorY: anchorY,
+            outlineThickness: 1,
         });
 
         if (typeof buttonPaddingScale === 'number') {
             buttonPaddingScale = {
-                horizontal: buttonPaddingScale
-            ,   vertical: buttonPaddingScale
+                horizontal: buttonPaddingScale,
+                vertical: buttonPaddingScale,
             };
         } else {
             var defaultPadding = {
-                horizontal: UICONST.DEFAULT_BUTTON_PADDING_SCALE
-            ,   vertical: UICONST.DEFAULT_BUTTON_PADDING_SCALE
+                horizontal: UICONST.DEFAULT_BUTTON_PADDING_SCALE,
+                vertical: UICONST.DEFAULT_BUTTON_PADDING_SCALE,
             };
             for (var side in defaultPadding) {
                 buttonPaddingScale[side] = buttonPaddingScale[side] || defaultPadding[side];
@@ -160,8 +159,8 @@ export class UI {
 
         // use the bitmap data as the texture for the sprite
         let button = this.addButton(x, y, bitmapData, callback, {
-            anchorX: anchorX
-        ,   anchorY: anchorY
+            anchorX: anchorX,
+            anchorY: anchorY,
         });
 
         button.addChild(buttonText);

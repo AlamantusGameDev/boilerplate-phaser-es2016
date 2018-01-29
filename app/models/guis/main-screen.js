@@ -9,22 +9,22 @@ export class MainScreen extends UI {
         let game = this.state.game;
 
         let mainText = this.addText(game.width / 2, game.height * 0.25, 'Phaser Example', {
-            font: 'ExampleFont'
-        ,   size: 48
+            font: 'ExampleFont',
+            size: 48,
         });
 
         let mainButton = this.addTextButton(game.width / 2, game.height / 2, 'Play', () => {
             this.changeState('Example');
         }, {
-            fontSize: 20
-        ,   buttonRadius: {
-                tl: 15
-            ,   br: 15
-            }
-        ,   buttonPaddingScale: {
-                vertical: 0.1
-            ,   horizontal: 0.3
-            }
+            fontSize: 20,
+            buttonRadius: {
+                tl: 15,
+                br: 15,
+            },
+            buttonPaddingScale: {
+                vertical: 0.1,
+                horizontal: 0.3,
+            },
         });
     }
 }
